@@ -1,8 +1,19 @@
-function Tiles({ animal }) {
+function Tiles({ animal, clickedImg }) {
+  // function clickedImg(event) {
+  //   console.log(event.target);
+  // }
   return (
     <div className="tiles">
       {animal.map((item, index) => {
-        return <img src={item} alt="puppies" />;
+        return (
+          <img
+            // onClick={(event) => clickedImg(event)}
+            onClick={(event) => clickedImg(event)}
+            key={index}
+            src={item}
+            alt="puppies"
+          />
+        );
       })}
     </div>
   );

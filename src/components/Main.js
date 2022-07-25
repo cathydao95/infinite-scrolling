@@ -1,4 +1,5 @@
 import Tiles from "./Tiles";
+import { useState, useEffect } from "react";
 function Main() {
   const puppies = [
     "https://frontendeval.com/images/puppy-1.jpeg",
@@ -30,11 +31,27 @@ function Main() {
     "https://frontendeval.com/images/kitten-12.jpeg",
   ];
 
+  const [display, setDisplay] = useState();
+
+  function clickedImg(event) {
+    setDisplay((prevDisplay) => event.target.src);
+  }
+
+  console.log(display);
   return (
-    <div>
+    <div className="container">
+      <div className="button-container">
+        <button className="button-pause">Paws</button>
+      </div>
+
       <div>
-        <Tiles animal={puppies} />
-        <Tiles animal={kittens} />
+        <Tiles animal={puppies} clickedImg={clickedImg} />
+        <Tiles animal={kittens} clickedImg={clickedImg} />
+      </div>
+      <div className="enlarged-container">
+        {display ? (
+          <img className="enlarged-image" src={`${display}`} alt="animal pic" />
+        ) : null}
       </div>
     </div>
   );
