@@ -1,3 +1,28 @@
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .tiles {
   display: flex;
+  gap: 10px;
+  margin: 10px;
+}
+
+img {
+  width: 20%;
+  border-radius: 10%;
+}
+
+.button-pause {
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+/* .enlarged-container {
+  width: 100vw;
+} */
+
+.enlarged-image {
+  width: 100vw;
 }
